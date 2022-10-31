@@ -4,7 +4,7 @@ const btn = document.querySelector(".js-btn");
 const result = document.querySelector(".js-result");
 const points = document.querySelector(".js-points");
 const reset = document.querySelector(".js-btn-reset");
-
+let strength = "";
 let countUser = 0;
 let countComputer = 0;
 
@@ -12,27 +12,30 @@ function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
 function badRace() {
+  debugger;
   const race = getRandomNumber(5);
 
   if (race === 1) {
-    raceStrength = 2;
+    strength = 2;
   } else if (race === 2) {
-    raceStrength = 2;
+    strength = 2;
   } else if (race === 3) {
-    raceStrength = 2;
+    strength = 2;
   } else if (race === 4) {
-    raceStrength = 3;
+    strength = 3;
   } else if (race === 5) {
-    raceStrength = 4;
+    strength = 4;
   }
-  return raceStrength;
+  console.log("strength");
 }
 
 const war = () => {
   const selectValue = select.value;
-  if (selectValue === raceStrength) {
+
+  if (selectValue === strength) {
     result.innerHTML = "Empate";
-  } else if (selectValue < raceStrength) {
+    console.log(strength);
+  } else if (selectValue < strength) {
     result.innerHTML = "Ha ganado el Ejército del Mal! Vuelve a Intentarlo.";
     countComputer++;
   } else {
@@ -47,6 +50,7 @@ function paintHTML(countUser, countComputer) {
 
 function handleClickWar(ev) {
   ev.preventDefault();
+  badRace();
   war();
   paintHTML(countUser, countComputer);
 }

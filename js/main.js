@@ -8,18 +8,22 @@ function getRandomNumber(max) {
 }
 const war = () => {
   const number = getRandomNumber(5);
+  //   if (selectValue === number) {
+  //     result.innerHTML = "Empate";
+  //   } else if (selectValue < number) {
+  //     result.innerHTML = "Ha ganado el Ejército del Mal! Vuelve a Intentarlo.";
+  //   } else {
+  //     result.innerHTML = "Ha ganado el Ejército del Bien! Enhorabuena.";
+  //   }
+
   console.log(number);
   const selectValue = select.value;
-
   if (selectValue === number) {
-    result.innerHTML("Empate");
-  } 
-  else if (selectValue < number) {
-    result.innerHTML("Ha ganado el Ejército del Mal! Vuelve a Intentarlo.");
-  }
-  else (select > number) {
-    result.innerHTML("Ha ganado el Ejército del Bien! Enhorabuena.");
-
+    result.innerHTML = "Empate";
+  } else if (selectValue < number) {
+    result.innerHTML = "Ha ganado el Ejército del Mal! Vuelve a Intentarlo.";
+  } else {
+    result.innerHTML = "Ha ganado el Ejército del Bien! Enhorabuena.";
   }
 };
 

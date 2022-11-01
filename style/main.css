@@ -1,3 +1,97 @@
+:root {
+    --principal-color: rgb(94, 11, 11);
+  }
+  * {
+    font-family: 'Barlow', sans-serif;
+  }
+  body {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    width: 100%;
+    height: 100vh;
+  }
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 550px;
+    margin: 10px;
+  }
+  .images{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-image: url("../images/el-senor-de-los-anillos-los-anillos-de-poder.jpeg");
+  }
+  .section{
+    padding: 15px;
+    font-size: 25px;
+    letter-spacing: 3px;
+  }
+  .span{
+    padding: 15px;
+    letter-spacing: 5px;
+    text-transform:uppercase;
+  }
+  .title{
+    color: var(--principal-color);
+    padding: 15px;
+    font-size: 25px;
+    letter-spacing: 3px;
+    text-transform:uppercase;
+  }
+   .subtitle {
+    padding: 15px;
+    font-size: 16px;
+  }
+  .subtitle-2{
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px;
+  }
+.play{
+    width: 100px;
+    height: 30px;
+       border-radius: 25px;
+    font-weight: bold;
+    
+        background-color: var(--principal-color);
+        border: none;
+        color: white;
+   
+}
 .hidden{
     display: none;
 }
+.points{
+    
+        padding: 15px;
+        font-size: 18px;
+        letter-spacing: 3px;
+        color: var(--principal-color);
+        text-align: center;
+      
+}
+
+.message{
+    width: 100%;
+    background-color: rgb(94, 11, 11, 0.3);
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .reset {
+    background-color: var(--principal-color);
+    border: none;
+  }

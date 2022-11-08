@@ -37,14 +37,14 @@ const war = (strength) => {
   debugger;
   const selectValue = select.value;
 
-  if (selectValue === strength) {
-    paintResult = "Empate";
+  if (selectValue > strength) {
+    paintResult("Ha ganado el Ejército del Bien! Enhorabuena.");
+    countUser++;
   } else if (selectValue < strength) {
     paintResult("Ha ganado el Ejército del Mal! Vuelve a Intentarlo.");
     countComputer++;
   } else {
-    paintResult("Ha ganado el Ejército del Bien! Enhorabuena.");
-    countUser++;
+    paintResult("Empate.");
   }
 };
 

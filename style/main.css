@@ -26,7 +26,6 @@
   .images{
     width: 100%;
     height: 100%;
-    background-size: cover;
     background-image: url("../images/el-senor-de-los-anillos-los-anillos-de-poder.jpeg");
   }
   .section{

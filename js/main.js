@@ -4,7 +4,7 @@ const btn = document.querySelector(".js-btn");
 const result = document.querySelector(".js-result");
 const points = document.querySelector(".js-points");
 const reset = document.querySelector(".js-btn-reset");
-let strength = "";
+
 let countUser = 0;
 let countComputer = 0;
 
@@ -26,20 +26,24 @@ function badRace() {
   } else if (race === 5) {
     strength = 4;
   }
-  console.log("strength");
+
+  return strength;
 }
 
-const war = () => {
+function paintResult(value) {
+  result.innerHTML = value;
+}
+const war = (strength) => {
+  debugger;
   const selectValue = select.value;
 
   if (selectValue === strength) {
-    result.innerHTML = "Empate";
-    console.log(strength);
+    paintResult = "Empate";
   } else if (selectValue < strength) {
-    result.innerHTML = "Ha ganado el Ejército del Mal! Vuelve a Intentarlo.";
+    paintResult("Ha ganado el Ejército del Mal! Vuelve a Intentarlo.");
     countComputer++;
   } else {
-    result.innerHTML = "Ha ganado el Ejército del Bien! Enhorabuena.";
+    paintResult("Ha ganado el Ejército del Bien! Enhorabuena.");
     countUser++;
   }
 };
@@ -51,7 +55,7 @@ function paintHTML(countUser, countComputer) {
 function handleClickWar(ev) {
   ev.preventDefault();
   badRace();
-  war();
+  war(strength);
   paintHTML(countUser, countComputer);
 }
 function gameOver() {

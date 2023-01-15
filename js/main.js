@@ -5,14 +5,16 @@ const result = document.querySelector(".js-result");
 const points = document.querySelector(".js-points");
 const reset = document.querySelector(".js-btn-reset");
 
+
 let countUser = 0;
 let countComputer = 0;
+let movesCount = 0;
 
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
 function badRace() {
-  debugger;
+
   const race = getRandomNumber(5);
 
   if (race === 1) {
@@ -34,7 +36,7 @@ function paintResult(value) {
   result.innerHTML = value;
 }
 const war = (strength) => {
-  debugger;
+
   const selectValue = select.value;
 
   if (selectValue > strength) {
@@ -57,10 +59,28 @@ function handleClickWar(ev) {
   badRace();
   war(strength);
   paintHTML(countUser, countComputer);
+  gameOver();
 }
 function gameOver() {
-  if (count === 10) {
-  }
+
+   movesCount++;   //movesCount = movesCount +1; 
+    console.log(movesCount);
+    if (movesCount === 10) {
+        //oculte el botón de batalla
+        //Muestre del reiniciar juego 
+        btn.classList.add("hidden");
+        reset.classList.remove("hidden");
+
+        //Muestro quien ha ganado el juego completo
+        if (countUser > countComputer) {
+            result.innerHTML = " Has ganado el juego!";
+        } else if (countUser < countComputer) {
+            result.innerHTML = " El ordenador ha ganado el juego!";
+        } else {
+            result.innerHTML = "Empate!"
+        }
+
+    }
 }
 
 btn.addEventListener("click", handleClickWar);

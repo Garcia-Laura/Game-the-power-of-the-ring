@@ -93,6 +93,8 @@ function handleReset(event) {
   event.preventDefault();
   btn.classList.remove("hidden");
   reset.classList.add("hidden");
+  // select = "default";
+  HTMLFormElement.reset(select)
   countUser = 0;
   countComputer = 0;
   movesCount = 0;

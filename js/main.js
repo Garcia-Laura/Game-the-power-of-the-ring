@@ -32,6 +32,7 @@ function badRace() {
   return strength;
 }
 
+
 function paintResult(value) {
   result.innerHTML = value;
 }
@@ -39,7 +40,12 @@ const war = (strength) => {
 
   const selectValue = select.value;
 
-  if (selectValue > strength) {
+
+ if (selectValue === "default"){
+  paintResult("Elige una raza");
+
+ }
+  else if (selectValue > strength) {
     paintResult("Ha ganado el Ejército del Bien! Enhorabuena.");
     countUser++;
   } else if (selectValue < strength) {
@@ -73,14 +79,35 @@ function gameOver() {
 
         //Muestro quien ha ganado el juego completo
         if (countUser > countComputer) {
-            result.innerHTML = " Has ganado el juego!";
+            result.innerHTML = " ¡Enhorabuena! Has ganado el juego!";
         } else if (countUser < countComputer) {
-            result.innerHTML = " El ordenador ha ganado el juego!";
+            result.innerHTML = " Game Over. ¡El ordenador ha ganado el juego!";
         } else {
-            result.innerHTML = "Empate!"
+            result.innerHTML = "¡Empate!"
         }
 
     }
 }
 
+function handleReset(event) {
+  event.preventDefault();
+  btn.classList.remove("hidden");
+  reset.classList.add("hidden");
+  countUser = 0;
+  countComputer = 0;
+  movesCount = 0;
+  result.innerHTML = "Comienza la batalla";
+}
+
+
+//Bonus
+/* Calcular puntos de la usuaria y del ordenador (contador user, contador PC)
+-  Contar los 10 movimientos: contador moves
+-  Ocultar botón y mostrar otro: classlist
+-  Reiniciar el juego
+-  Mostrar quien ha ganado todo 
+*/
+
+
 btn.addEventListener("click", handleClickWar);
+reset.addEventListener("click", handleReset);
